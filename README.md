@@ -40,6 +40,25 @@ npm run preview
 다른 브라우저/기기에서 사용하려면 **내보내기** 버튼으로 JSON을 백업한 뒤,
 다른 환경에서 **가져오기**로 복원하세요.
 
+## GitHub Pages 배포
+
+이 저장소는 `main` (또는 `master`) 브랜치에 push 되면 GitHub Actions로 자동
+빌드 후 GitHub Pages에 배포됩니다 (`.github/workflows/deploy.yml`).
+
+### 최초 1회 설정 (저장소 Settings에서 직접)
+
+1. GitHub 저장소 → **Settings** → **Pages**
+2. **Source**: `GitHub Actions` 선택
+3. 현재 작업 브랜치(`claude/asset-management-program-hxPwv`)를 `main`으로 머지
+   하거나, 워크플로우의 `branches` 항목에 현재 브랜치를 추가
+4. Actions 탭에서 워크플로우 실행 확인
+5. 배포 완료 후 주소: `https://<username>.github.io/myAssetManagement/`
+
+> ℹ️ public 저장소만 무료. private 저장소는 GitHub Pro 이상 필요.
+
+> ⚠️ `vite.config.ts`의 `base: '/myAssetManagement/'`는 저장소 이름과 일치해야
+> 합니다. 저장소 이름을 바꾸면 이 값도 함께 수정하세요.
+
 ## 디렉토리 구조
 
 ```
